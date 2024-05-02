@@ -11,6 +11,10 @@ int main()
 	myLinkedList.InsertAtFront(5);
 	myLinkedList.InsertAtEnd(70);
 	myLinkedList.InsertAtIndex(30, 2);
-	std::cout << myLinkedList;
+	std::cout << myLinkedList << std::endl;
+	myLinkedList.DeleteAtFront();
+	myLinkedList.DeleteAtEnd();
+	myLinkedList.DeleteAtIndex(2);
+	std::cout << myLinkedList << std::endl;
 }
 

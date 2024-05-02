@@ -63,6 +63,53 @@ public:
 		++length;
 	}
 
+	void DeleteAtIndex(const size_t _index)
+	{
+		if (_index >= length) {
+			throw std::out_of_range("Index is out of range.");
+		}
+
+		Node<T>* currentNode = head;
+		if (_index == 0) {
+			head = head->GetNextNode();
+			delete currentNode;
+			if (length == 1)
+			{
+				tail = nullptr;
+			}
+		}
+		else {
+			Node<T>* prevNode = nullptr;
+			for (size_t i = 0; i < _index; ++i) {
+				prevNode = currentNode;
+				currentNode = currentNode->GetNextNode();
+			}
+			prevNode->SetNextNode(currentNode->GetNextNode());
+			if (_index == length - 1)
+			{
+				tail = prevNode;
+			}
+			delete currentNode;
+		}
+		--length;
+	}
+
+	void DeleteAtFront()
+	{
+		if (length == 0) {
+			throw std::out_of_range("List is empty.");
+		}
+		DeleteAtIndex(0);
+	}
+
+	void DeleteAtEnd()
+	{
+		if (length == 0) {
+			throw std::out_of_range("List is empty.");
+		}
+		DeleteAtIndex(length - 1);
+	}
+
 	friend std::ostream& operator<<(std::ostream& _os, const LinkedList<T>& _list)
 	{
 		Node<T>* _currentNode = _list.head;
