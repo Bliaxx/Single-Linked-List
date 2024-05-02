@@ -7,6 +7,7 @@ class LinkedList
 {
 	Node<T>* head = nullptr;
 	Node<T>* tail = nullptr;
+	size_t length = 0;
 
 public:
 	LinkedList() = default;
@@ -19,40 +20,47 @@ public:
 			_currentNode = _currentNode->GetNextNode();
 			delete _tempNodeToDelete;
 		}
+		length = 0;
 	}
 
 public:
 	void InsertAtFront(const T& _value)
 	{
-		Node<T>* _newNode = new Node<T>(_value);
-		if (!head)
-		{
-			head = _newNode;
-			tail = _newNode;
-		}
-		else
-		{
-			_newNode->SetNextNode(head);
-			head = _newNode;
-		}
+		InsertAtIndex(_value, 0);
 	}
 	
 	void InsertAtEnd(const T& _value)
 	{
-		if (!tail)
-		{
-			InsertAtFront(_value);
-		}
-		else
-		{
-			Node<T>* _newNode = new Node<T>(_value);
-			tail->SetNextNode(_newNode);
-		}
+		InsertAtIndex(_value, length);
 	}
 
 	void InsertAtIndex(const T& _value, const size_t _index)
 	{
+		if (_index > length) {
+			throw std::out_of_range("Index is out of range.");
+		}
 
+		if (_index == 0) {
+			Node<T>* newNode = new Node<T>(_value);
+			newNode->SetNextNode(head);
+			head = newNode;
+			if (length == 0) {
+				tail = newNode;
+			}
+		}
+		else {
+			Node<T>* currentNode = head;
+			for (size_t i = 0; i < _index - 1; ++i) {
+				currentNode = currentNode->GetNextNode();
+			}
+			Node<T>* newNode = new Node<T>(_value);
+			newNode->SetNextNode(currentNode->GetNextNode());
+			currentNode->SetNextNode(newNode);
+			if (_index == length) {
+				tail = newNode;
+			}
+		}
+		++length;
 	}
 
 	friend std::ostream& operator<<(std::ostream& _os, const LinkedList<T>& _list)
@@ -63,6 +71,7 @@ public:
 			_os << _currentNode->GetData() << "->";
 			_currentNode = _currentNode->GetNextNode();
 		}
+		_os << "nullptr";
 		return _os;
 	}
 };
