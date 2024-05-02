@@ -4,9 +4,9 @@
 int main()
 {
 	LinkedList<int> myLinkedList;
+	myLinkedList.InsertAtEnd(50);
+	myLinkedList.InsertAtEnd(60);
 	myLinkedList.InsertAtFront(10);
-	myLinkedList.InsertAtFront(20);
-	myLinkedList.InsertAtFront(30);
 	std::cout << myLinkedList;
 }
 

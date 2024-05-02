@@ -36,6 +36,24 @@ public:
 			head = _newNode;
 		}
 	}
+	
+	void InsertAtEnd(const T& _value)
+	{
+		if (!tail)
+		{
+			InsertAtFront(_value);
+		}
+		else
+		{
+			Node<T>* _newNode = new Node<T>(_value);
+			tail->SetNextNode(_newNode);
+		}
+	}
+
+	void InsertAtIndex(const T& _value, const size_t _index)
+	{
+
+	}
 
 	friend std::ostream& operator<<(std::ostream& _os, const LinkedList<T>& _list)
 	{
