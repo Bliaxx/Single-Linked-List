@@ -11,9 +11,35 @@ class LinkedList
 
 public:
 	LinkedList() = default;
+	LinkedList(const LinkedList<T>& _other)
+	{
+		Node<T>* _currentNode = _other.head;
+		while (_currentNode != nullptr)
+		{
+			InsertAtEnd(_currentNode->GetData());
+			_currentNode = _currentNode->GetNextNode();
+		}
+	}
 	~LinkedList() { Clear(); }
 
 public:
+	class Iterator
+	{
+		Node<T>* currentNode = nullptr;
+
+	public:
+		Iterator(Node<T>* _node) : currentNode(_node) {}
+
+	public:
+		T& operator*() const { return currentNode->GetData(); }
+		Iterator& operator++()
+		{
+			currentNode = currentNode->GetNextNode();
+			return *this;
+		}
+		bool operator==(const Iterator& _other) const { return currentNode == _other.currentNode; }
+		bool operator!=(const Iterator& _other) const { return currentNode != _other.currentNode; }
+	};
 	inline const T& Front() const { return head->GetData(); }
 	inline const T& Back() const { return tail->GetData(); }
 
@@ -121,6 +147,21 @@ public:
 		length = 0;
 	}
 
+	LinkedList& operator=(const LinkedList<T>& _other)
+	{
+		if (this != &_other)
+		{
+			Clear();
+
+			Node<T>* _currentNode = _other.head;
+			while (_currentNode != nullptr) {
+				InsertAtEnd(_currentNode->GetData());
+				_currentNode = _currentNode->GetNextNode();
+			}
+		}
+		return *this;
+	}
+
 	friend std::ostream& operator<<(std::ostream& _os, const LinkedList<T>& _list)
 	{
 		Node<T>* _currentNode = _list.head;
@@ -132,5 +173,8 @@ public:
 		_os << "nullptr";
 		return _os;
 	}
+
+	Iterator begin() const { return Iterator(head); }
+	Iterator end() const { return Iterator(nullptr); }
 };
 

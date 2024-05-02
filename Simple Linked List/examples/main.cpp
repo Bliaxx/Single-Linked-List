@@ -11,6 +11,7 @@ int main()
 	myLinkedList.InsertAtFront(5);
 	myLinkedList.InsertAtEnd(70);
 	myLinkedList.InsertAtIndex(30, 2);
+	LinkedList<int> mySecondList(myLinkedList);
 	std::cout << myLinkedList << std::endl;
 	myLinkedList.DeleteAtFront();
 	myLinkedList.DeleteAtEnd();
@@ -18,9 +19,11 @@ int main()
 	std::cout << myLinkedList << std::endl;
 	std::cout << "Is Empty : " << myLinkedList.IsEmpty() << std::endl;
 	std::cout << "Length : " << myLinkedList.GetSize() << std::endl;
-	myLinkedList.Clear();
-	std::cout << "Is Empty : " << myLinkedList.IsEmpty() << std::endl;
-	std::cout << "Length : " << myLinkedList.GetSize() << std::endl;
 	std::cout << myLinkedList << std::endl;
+	std::cout << mySecondList << std::endl;
+	for (int _value : mySecondList)
+	{
+		std::cout << _value << " ";
+	}
 }
 

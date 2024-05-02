@@ -13,6 +13,7 @@ public:
 
 public:
 	inline const T& GetData() const { return data; }
+	inline T& GetData() { return data; }
 	inline void SetData(const T& _value) { data = _value; }
 	inline Node<T>* GetNextNode() const { return nextNode; }
 	inline void SetNextNode(Node<T>* _nextNode) { nextNode = _nextNode; }
