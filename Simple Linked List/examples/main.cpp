@@ -16,7 +16,11 @@ int main()
 	myLinkedList.DeleteAtEnd();
 	myLinkedList.DeleteAtIndex(2);
 	std::cout << myLinkedList << std::endl;
-	std::cout << "Front : " << myLinkedList.Front() << std::endl;
-	std::cout << "Back : " << myLinkedList.Back() << std::endl;
+	std::cout << "Is Empty : " << myLinkedList.IsEmpty() << std::endl;
+	std::cout << "Length : " << myLinkedList.GetSize() << std::endl;
+	myLinkedList.Clear();
+	std::cout << "Is Empty : " << myLinkedList.IsEmpty() << std::endl;
+	std::cout << "Length : " << myLinkedList.GetSize() << std::endl;
+	std::cout << myLinkedList << std::endl;
 }
 

@@ -11,21 +11,15 @@ class LinkedList
 
 public:
 	LinkedList() = default;
-	~LinkedList()
-	{
-		Node<T>* _currentNode = head;
-		while (_currentNode != nullptr)
-		{
-			Node<T>* _tempNodeToDelete = _currentNode;
-			_currentNode = _currentNode->GetNextNode();
-			delete _tempNodeToDelete;
-		}
-		length = 0;
-	}
+	~LinkedList() { Clear(); }
 
 public:
 	inline const T& Front() const { return head->GetData(); }
 	inline const T& Back() const { return tail->GetData(); }
+
+	const size_t GetSize() const { return length; }
+
+	inline bool IsEmpty() const { return GetSize() == 0; }
 
 	void InsertAtFront(const T& _value)
 	{
@@ -111,6 +105,20 @@ public:
 			throw std::out_of_range("List is empty.");
 		}
 		DeleteAtIndex(length - 1);
+	}
+
+	void Clear()
+	{
+		Node<T>* _currentNode = head;
+		while (_currentNode != nullptr)
+		{
+			Node<T>* _tempNodeToDelete = _currentNode;
+			_currentNode = _currentNode->GetNextNode();
+			delete _tempNodeToDelete;
+		}
+		head = nullptr;
+		tail = nullptr;
+		length = 0;
 	}
 
 	friend std::ostream& operator<<(std::ostream& _os, const LinkedList<T>& _list)
