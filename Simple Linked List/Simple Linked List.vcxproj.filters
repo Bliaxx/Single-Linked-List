@@ -21,10 +21,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Node.h">
+    <ClInclude Include="include\LinkedList.h">
       <Filter>Header Files\include</Filter>
     </ClInclude>
-    <ClInclude Include="LinkedList.h">
+    <ClInclude Include="include\Node.h">
       <Filter>Header Files\include</Filter>
     </ClInclude>
   </ItemGroup>
