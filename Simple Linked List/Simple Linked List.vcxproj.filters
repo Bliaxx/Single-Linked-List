@@ -16,15 +16,18 @@
     <Filter Include="Header Files\include">
       <UniqueIdentifier>{d3a22a35-4046-4c13-81b5-518eaa654608}</UniqueIdentifier>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Simple Linked List.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+    <Filter Include="Source Files\examples">
+      <UniqueIdentifier>{5bf49b24-da7a-4cca-a679-ff9f895964a4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Node.h">
       <Filter>Header Files\include</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files\examples</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
