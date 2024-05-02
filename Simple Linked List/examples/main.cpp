@@ -16,5 +16,7 @@ int main()
 	myLinkedList.DeleteAtEnd();
 	myLinkedList.DeleteAtIndex(2);
 	std::cout << myLinkedList << std::endl;
+	std::cout << "Front : " << myLinkedList.Front() << std::endl;
+	std::cout << "Back : " << myLinkedList.Back() << std::endl;
 }
 

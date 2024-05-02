@@ -24,6 +24,9 @@ public:
 	}
 
 public:
+	inline const T& Front() const { return head->GetData(); }
+	inline const T& Back() const { return tail->GetData(); }
+
 	void InsertAtFront(const T& _value)
 	{
 		InsertAtIndex(_value, 0);
