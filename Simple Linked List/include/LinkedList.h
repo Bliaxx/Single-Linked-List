@@ -1,5 +1,6 @@
 #pragma once
 
+#include <functional>
 #include "Node.h"
 
 template<typename T>
@@ -131,6 +132,33 @@ public:
 			throw std::out_of_range("List is empty.");
 		}
 		DeleteAtIndex(length - 1);
+	}
+
+	void RemoveIf(std::function<bool(const T&)> _predicate)
+	{
+		size_t _index = 0;
+		Node<T>* _currentNode = head;
+		while (_currentNode != nullptr) {
+			if (_predicate(_currentNode->GetData())) {
+				Node<T>* _toDelete = _currentNode;
+				_currentNode = _currentNode->GetNextNode();
+
+				if (_toDelete == head) {
+					DeleteAtFront();
+				}
+				else if (_toDelete == tail) {
+					DeleteAtEnd();
+				}
+				else {
+					DeleteAtIndex(_index);
+					continue;
+				}
+			}
+			else {
+				_currentNode = _currentNode->GetNextNode();
+				_index++;
+			}
+		}
 	}
 
 	void Clear()
