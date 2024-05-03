@@ -190,6 +190,29 @@ public:
 		return *this;
 	}
 
+	bool operator==(const LinkedList<T>& _other)
+	{
+		if (this->length != _other->length)
+			return false;
+
+		Node<T>* _currentNode = head;
+		Node<T>* _otherCurrentNode = _other.head;
+
+		while (_currentNode != nullptr)
+		{
+			if (_currentNode->GetData() != _otherCurrentNode->GetData())
+				return false;
+			_currentNode = _currentNode->GetNextNode();
+			_otherCurrentNode = _otherCurrentNode->GetNextNode();
+		}
+		return true;
+	}
+
+	bool operator!=(const LinkedList<T>& _other)
+	{
+		return !(*this == _other);
+	}
+
 	friend std::ostream& operator<<(std::ostream& _os, const LinkedList<T>& _list)
 	{
 		Node<T>* _currentNode = _list.head;
