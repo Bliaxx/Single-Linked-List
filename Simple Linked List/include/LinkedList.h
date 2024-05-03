@@ -192,7 +192,7 @@ public:
 
 	bool operator==(const LinkedList<T>& _other)
 	{
-		if (this->length != _other->length)
+		if (length != _other.length)
 			return false;
 
 		Node<T>* _currentNode = head;
