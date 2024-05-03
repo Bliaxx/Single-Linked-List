@@ -213,6 +213,18 @@ public:
 		return !(*this == _other);
 	}
 
+	Node<T>* Find(const T& _value) const
+	{
+		Node<T>* _currentNode = head;
+		while (_currentNode != nullptr)
+		{
+			if (_currentNode->GetData() == _value)
+				return _currentNode;
+			_currentNode = _currentNode->GetNextNode();
+		}
+		return nullptr;
+	}
+
 	friend std::ostream& operator<<(std::ostream& _os, const LinkedList<T>& _list)
 	{
 		Node<T>* _currentNode = _list.head;

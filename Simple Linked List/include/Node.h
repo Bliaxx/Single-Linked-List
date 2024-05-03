@@ -22,6 +22,11 @@ public:
 	inline bool operator!=(const Node<T>& _otherNode) const { return data != _otherNode.data; }
 	friend std::ostream& operator<<(std::ostream& _os, const Node<T>& _node)
 	{
+		if (!&_node)
+		{
+			_os << "Invalid Node.";
+			return _os;
+		}
 		_os << "Node(data : " << _node.data << ")";
 		return _os;
 	}

@@ -12,7 +12,7 @@ int main()
 	myLinkedList.InsertAtEnd(70);
 	myLinkedList.InsertAtIndex(30, 2);
 	std::cout << myLinkedList << std::endl;
-	myLinkedList.RemoveIf([](const int& _value) {return _value % 6 == 0; });
-	std::cout << myLinkedList << std::endl;
+	Node<int>* _searchNode = myLinkedList.Find(50);
+	std::cout << *_searchNode << std::endl;
 }
 
