@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{ea70e2cf-7bac-4a4d-8bff-80579703d31f}</ProjectGuid>
-    <RootNamespace>SimpleLinkedList</RootNamespace>
+    <ProjectGuid>{8ef0f7a7-335b-4b71-aa89-8b60835c532c}</ProjectGuid>
+    <RootNamespace>SingleLinkedListTest</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -72,19 +72,19 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Users\Dylan\Desktop\Perso\Programmation\C++\Library\googletest\googletest\include;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Users\Dylan\Desktop\Perso\Programmation\C++\Library\googletest\googletest\include;C:\Users\Dylan\Desktop\Perso\Programmation\C++\Library\googletest\googlemock\include;C:\Users\Dylan\Desktop\Perso\Programmation\C++\Project\Simple Linked List\Simple Linked List\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>C:\Users\Dylan\Desktop\Perso\Programmation\C++\Library\googletest\googletest\include;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Users\Dylan\Desktop\Perso\Programmation\C++\Library\googletest\googletest\include;C:\Users\Dylan\Desktop\Perso\Programmation\C++\Library\googletest\googlemock\include;C:\Users\Dylan\Desktop\Perso\Programmation\C++\Project\Simple Linked List\Simple Linked List\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Users\Dylan\Desktop\Perso\Programmation\C++\Library\googletest\googletest\include;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Users\Dylan\Desktop\Perso\Programmation\C++\Library\googletest\googletest\include;C:\Users\Dylan\Desktop\Perso\Programmation\C++\Library\googletest\googlemock\include;C:\Users\Dylan\Desktop\Perso\Programmation\C++\Project\Simple Linked List\Simple Linked List\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>C:\Users\Dylan\Desktop\Perso\Programmation\C++\Library\googletest\googletest\include;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Users\Dylan\Desktop\Perso\Programmation\C++\Library\googletest\googletest\include;C:\Users\Dylan\Desktop\Perso\Programmation\C++\Library\googletest\googlemock\include;C:\Users\Dylan\Desktop\Perso\Programmation\C++\Project\Simple Linked List\Simple Linked List\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -92,7 +92,6 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Dylan\Desktop\Perso\Programmation\C++\Project\Simple Linked List\Simple Linked List\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -110,7 +109,6 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Dylan\Desktop\Perso\Programmation\C++\Project\Simple Linked List\Simple Linked List\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -128,8 +126,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Dylan\Desktop\Perso\Programmation\C++\Project\Simple Linked List\Simple Linked List\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -146,8 +143,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Dylan\Desktop\Perso\Programmation\C++\Project\Simple Linked List\Simple Linked List\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -159,11 +155,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="include\LinkedList.h" />
-    <ClInclude Include="include\Node.h" />
+    <ClCompile Include="TestMain.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="examples\main.cpp" />
+    <ClInclude Include="..\Simple Linked List\tests\NodeTest.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
