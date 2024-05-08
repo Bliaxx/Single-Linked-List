@@ -23,7 +23,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Simple Linked List\tests\NodeTest.h">
+    <ClInclude Include="tests\NodeTest.h">
       <Filter>Header Files\tests</Filter>
     </ClInclude>
   </ItemGroup>
