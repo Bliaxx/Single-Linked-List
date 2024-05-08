@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.14)
+cmake_minimum_required(VERSION 3.15)
 project(SimpleLinkedList LANGUAGES CXX)
 
 add_executable(SimpleLinkedList examples/main.cpp)
