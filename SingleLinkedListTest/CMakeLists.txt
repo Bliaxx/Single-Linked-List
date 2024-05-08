@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.15)
 project(SimpleLinkedListTest LANGUAGES CXX)
 
 if(MSVC)
-    set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreadedDebug")
+    set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreadedDebugDLL")
 endif()
 
 add_executable(SimpleLinkedListTest TestMain.cpp)
