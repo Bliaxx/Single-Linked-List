@@ -26,5 +26,8 @@
     <ClInclude Include="tests\NodeTest.h">
       <Filter>Header Files\tests</Filter>
     </ClInclude>
+    <ClInclude Include="tests\LinkedListTest.h">
+      <Filter>Header Files\tests</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

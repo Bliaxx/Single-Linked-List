@@ -1,5 +1,6 @@
 #include <iostream>
 #include "tests/NodeTest.h"
+#include "tests/LinkedListTest.h"
 
 int main(int argc, char** argv) {
     testing::InitGoogleTest(&argc, argv);
